@@ -1,0 +1,360 @@
+:root{
+  --black10:#000000;
+  --black20:#545454;
+  --azul:#5551FF;
+
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  color:var(--black10);
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background: white;
+}
+
+.hero{
+  background:linear-gradient(274.51deg, rgba(74, 0, 224, 0.6) 5%, rgba(142, 45, 226, 0.5) 130.61%), url('../images/pattern-2.png');
+  height: 350px;
+}
+
+/* MENU DE NAVEGACION */
+.header-content nav details summary{
+    font-weight: bold;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
+}
+
+.header-content nav details:last-child{
+  color: rgba(0, 0, 0, 0.5);
+  margin-block-start: -41px;
+}
+
+
+header{
+  font-size: 14px;
+  width: 188px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  margin-inline-start: 24px;
+}
+
+
+header a{
+  color: var(--black10);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header{
+  position: sticky;
+  top:0;
+}
+
+.header-content ol{
+  counter-reset: titleList;
+  padding-inline-start: 0;
+}
+
+.header-content li{
+  counter-increment: titleList;
+  list-style: none;
+  margin-block-end: 16px;
+}
+
+.header-content li::before{
+  content: ""counter(titleList,decimal)". ";
+}
+
+.header-content li:hover, .header-content a:hover{
+  background:var(--azul);
+  color: white;
+}
+
+.header-content li:hover, .header-content a:hover,
+.header-content li, header a{
+    padding-block: 8px;
+    padding-inline-start: 8px;
+    padding-inline-end: 15px;
+ }
+
+
+/* TERMINA MENU DE NAVEGACION */
+
+h1{
+  font-size: 60px;
+  margin-block-start: 64px;
+  margin-block-end: 16px;
+  font-weight: bold;
+}
+
+hr{
+  margin-block: 64px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+h2{
+  font-size: 2em;
+  margin-block-end: 40px;
+  font-weight: normal;
+
+}
+
+h3{
+  font-size: 1.5em;
+  margin-block-start: 40px;
+  margin-block-end: 16px;
+  font-weight: normal;
+  position:sticky;
+  top:0;
+  background:white;
+}
+
+pre{
+  padding-block: 40px;
+  padding-inline-start: 40px;
+  padding-inline-end: 352px;
+  line-height: 24px;
+  color: var(--black10);
+  overflow: auto;
+  font-weight: normal;
+  border-radius: 8px;
+  border:8px solid var(--azul);
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  margin-block-end: 40px;
+  text-align: left;
+}
+
+p{
+  color: var(--black20);
+  line-height: 24px;
+}
+
+blockquote{
+  display: inline-block;
+  margin-block: 64px;
+  border-inline-start: 4px solid var(--azul);
+  padding-inline-start: 16px;
+}
+
+blockquote p{
+  line-height: 32px;
+  font-size: 24px;
+  color: var(--black10);
+}
+
+blockquote p span{
+  display: block;
+  text-align: left;
+}
+
+blockquote span::before{
+  content: "- ";
+}
+
+
+.main-content, .main-content .section-content{
+  text-align: center;
+}
+
+.section-content-last, .slider{
+  text-align: left;
+}
+
+.section-content-last h2{
+  margin-block-start: 154.56px;
+}
+
+.section-content-last h3{
+  margin-block-start: 40px;
+  margin-block-end: 16px;
+}
+
+.section-content-last ol{
+  padding-inline-start: 20px;
+}
+
+.section-content-last ul{
+  padding-inline-start: 0px;
+}
+
+.section-content-last ol li, .section-content-last ul li {
+  color: var(--black20);
+  line-height: 24px;
+}
+
+.section-content-last ul li{
+  margin-block-end: 16px;
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+
+.section-content-last ul li::before{
+  background-color: var(--azul);
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  margin-right: 16px;
+  height: 8px;
+  width: 8px;
+}
+
+.section-content img{
+  margin-block-start: 16px;
+  align-content: center;
+  max-inline-size: 100%;
+}
+
+.section-content{
+  counter-reset: titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+.section-content h3::before{
+  content: "" counter(titleList,decimal) ". ";
+}
+
+.section-content-last a{
+  font-size: 24px;
+  color: var(--black10);
+  text-decoration: none;
+  display: block;
+  margin-block-start: 40px;
+  margin-block-end: 16px;
+}
+
+.section-content-last img{
+  display: inline-block;
+  width: 30px;
+  margin-inline-start: 20px;
+  /* margin-block-start: 40px; */
+}
+
+.slider{
+
+}
+
+.slider-container{
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  /* white-space: nowrap; => si encuentra una frontera(limite) en lugar de mandar ese elemento para abajo  con esta propiedad
+  (white-space)no lo manda a la siguiente linea y teniendo el overflow provoca que no se desborde y exista el desplazamiento  */
+  white-space: nowrap;
+  /* para que no exista el espacio para separar elementos que el navegador pone por default ponemos => font-size: 0;*/
+  font-size: 0;
+}
+
+.video{
+  margin: 0;
+  /* con display:inline-block: ;
+  permite teener un elemento a la de otro elemento y tambien tienen la posibilidad de tener width, height, padding */
+  display: inline-block;
+  width: 100%;
+  height: 450px;
+  /* proporcion en la que normalmente estan los videoss */
+  aspect-ratio: 16/9;
+}
+
+.slider-bullet-list{
+  text-align: center;
+  margin-block-start:16px;
+}
+
+.slider-bullet{
+  display: inline-block;
+  inline-size:16px;
+  block-size: 16px;
+  border-radius: 50%;
+  background:var(--azul);
+  margin-inline-end: 8px;
+}
+
+.slider-bullet:hover{
+  background: rgba(142, 45, 226, 0.5);
+}
+
+.section-content-form{
+  text-align: left;
+}
+
+.section-content-form p,a{
+  font-weight: normal;
+  color: var(--black20);
+}
+
+.form input{
+  border-radius: 90px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  padding-inline: 16px;
+  padding-block: 12px;
+  width: 280px;
+  height: 60px;
+  margin-block-end: 113px;
+  margin-inline-end: 16px;
+}
+
+/* Para cambiar el color del texto que contiene placeholderm  */
+.form input::-webkit-input-placeholder{
+  color: var(--black10);
+}
+
+/* selector de atributos (solo afecta los elementos que tengan ese atributo) */
+.form input[type="submit"]{
+  background:var(--azul);
+  color: white;
+  font-weight: 500;
+  border:none;
+  width: 126px;
+  margin: -138px;
+}
+
+.section-content-form h2{
+  margin-block-start: 40px;
+  margin-block-end: 16px;
+}
+
+.wrapper{
+  max-inline-size: 902px;
+  margin: auto;
+}
+
+.debug{
+  border: 1px solid red;
+}
+
+
+/* RESPONSIVE DESIGN (media queries) */
+/* @media print() => afecta impresion */
+/* @media all() => afecta todos los dispositivos */
+/* @media screen() => afecta solo la pantalla */
+@media screen and (min-width:100px) and (max-width:1343px){
+  .hero{
+    block-size: 150px;
+  }
+
+  /* .header{
+    position: sticky;
+    top: 0px;
+  } */
+
+  header{
+    position: relative;
+    /* margin-inline-start: 0px; */
+    /* inset-block-start: 0; */
+    margin: auto;
+  }
+
+  /* .header-content{
+    display: none;
+  } */
+}
